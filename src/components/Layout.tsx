@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         setDrawerOpen(false);
     }, [location.pathname]);
 
-    // Prevent body scroll when drawer is open
+    // Lock body scroll when drawer is open
     useEffect(() => {
         document.body.style.overflow = drawerOpen ? 'hidden' : '';
         return () => { document.body.style.overflow = ''; };
@@ -34,12 +34,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
     return (
         <div className="layout-root">
+            {/* ── Header ── */}
             <header className="main-header">
                 <div
                     className="container header-content"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}
+                    style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
                 >
-                    {/* Hamburger — mobile only */}
+                    {/* Hamburger — visible only on mobile via CSS */}
                     <button
                         className="hamburger-btn"
                         onClick={() => setDrawerOpen(o => !o)}
@@ -49,8 +50,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <span className="hamburger-icon">{drawerOpen ? '✕' : '☰'}</span>
                     </button>
 
-                    <div className="logo-area" style={{ flex: 1, minWidth: 0 }}>
-                        <h1>Colorado Juvenile Justice Navigator</h1>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                        <h1 className="site-title">Colorado Juvenile Justice Navigator</h1>
                     </div>
 
                     <div className="header-search-wrapper">
@@ -59,7 +60,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
             </header>
 
-            {/* Mobile drawer overlay */}
+            {/* ── Mobile drawer overlay ── */}
             {drawerOpen && (
                 <div
                     className="drawer-overlay"
@@ -68,8 +69,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 />
             )}
 
-            {/* Mobile slide-in drawer */}
-            <nav className={`mobile-drawer ${drawerOpen ? 'open' : ''}`} aria-label="Mobile navigation">
+            {/* ── Mobile slide-in drawer ── */}
+            <nav
+                className={`mobile-drawer${drawerOpen ? ' open' : ''}`}
+                aria-label="Mobile navigation"
+            >
                 <div className="drawer-header">
                     <span style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--color-primary-dark)' }}>
                         Navigation
@@ -78,7 +82,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         className="drawer-close-btn"
                         onClick={() => setDrawerOpen(false)}
                         aria-label="Close navigation"
-                    >✕</button>
+                    >
+                        ✕
+                    </button>
                 </div>
                 <ul className="drawer-nav">
                     {navItems.map(item => (
@@ -86,7 +92,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             <NavLink
                                 to={item.to}
                                 end={item.end}
-                                className={({ isActive }) => `drawer-nav-link${isActive ? ' active' : ''}`}
+                                className={({ isActive }) =>
+                                    `drawer-nav-link${isActive ? ' active' : ''}`
+                                }
                             >
                                 <span className="drawer-nav-icon">{item.icon}</span>
                                 <span>{item.label}</span>
@@ -96,16 +104,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </ul>
             </nav>
 
+            {/* ── Main layout ── */}
             <div className="app-container">
-                {/* Desktop sidebar */}
-                <nav className="desktop-sidebar" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                    <ul style={{ flexGrow: 1 }}>
+                {/* Desktop sidebar — hidden on mobile via CSS (no inline style override) */}
+                <nav className="desktop-sidebar" aria-label="Desktop navigation">
+                    <ul>
                         {navItems.map(item => (
                             <li key={item.to}>
                                 <NavLink
                                     to={item.to}
                                     end={item.end}
-                                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                                    className={({ isActive }) =>
+                                        isActive ? 'nav-link active' : 'nav-link'
+                                    }
                                 >
                                     {item.label}
                                 </NavLink>
