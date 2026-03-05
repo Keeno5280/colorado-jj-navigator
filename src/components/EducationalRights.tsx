@@ -30,15 +30,7 @@ const EducationalRights: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="edu-card hotline-card">
-                    <h3>Statewide Student Hotline</h3>
-                    <div className="hotline-number">
-                        Available Soon
-                    </div>
-                    <p>
-                        A statewide hotline connects you to "Hotline Heroes" who help with school credit recovery and mental health resources. Check back soon for the number!
-                    </p>
-                </div>
+
             </div>
         </div>
     );
