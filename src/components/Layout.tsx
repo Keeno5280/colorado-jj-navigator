@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import StickyDisclaimer from './StickyDisclaimer';
+import GlobalSearch from './GlobalSearch';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -10,12 +11,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className="layout-root">
             <header className="main-header">
-                <div className="container header-content">
-                    <div className="logo-area">
+                <div className="container header-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
+                    <div className="logo-area" style={{ flexShrink: 0 }}>
                         <h1>Colorado Juvenile Justice Navigator</h1>
                     </div>
+                    <GlobalSearch />
                 </div>
             </header>
+
 
             <div className="app-container">
                 <nav className="desktop-sidebar" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
