@@ -884,3 +884,170 @@ button {
   font-weight: 600;
   color: var(--color-primary-dark);
 }
+
+/* ─── MOBILE OVERRIDES ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+
+  /* Header: stack title + search vertically */
+  .main-header {
+    padding: 0.75rem 0;
+  }
+
+  .main-header .header-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+
+  .main-header h1 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* Search bar full-width on mobile */
+  .main-header>div>div:last-child {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Main content padding: account for bottom nav (~56px) + disclaimer (~80px) */
+  .main-content {
+    padding: 1.25rem 0 9rem 0;
+  }
+
+  /* Hero section: reduce size */
+  .hero {
+    padding: 1.25rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Dashboard grid: single column on mobile */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .dash-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Know Your Rights: make tabs horizontally scrollable */
+  .tabs-header {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.25rem !important;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .tabs-header::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex-shrink: 0;
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.75rem !important;
+    white-space: nowrap;
+  }
+
+  .tabs-body {
+    padding: 1rem !important;
+  }
+
+  /* Rights content: remove large padding, improve readability */
+  .rights-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .rights-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .rights-content ul,
+  .rights-list {
+    padding-left: 1.25rem;
+  }
+
+  /* Charge type grids: force single column */
+  .charge-row-grid,
+  [style*="grid-template-columns: 160px 1fr 1fr"] {
+    display: block !important;
+  }
+
+  /* Glossary role cards: single column */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    display: block !important;
+  }
+
+  /* Glossary: who/role block stacked */
+  [style*="display: grid"][style*="1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Global search dropdown: ensure it doesn't go off screen */
+  .global-search-dropdown {
+    left: -1rem;
+    right: -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  /* Sticky disclaimer: more compact on mobile */
+  .sticky-disclaimer {
+    padding: 0.6rem 0;
+  }
+
+  .sticky-disclaimer p {
+    font-size: 0.78rem;
+    text-align: left;
+  }
+
+  /* Bottom nav: make items smaller to fit 6 icons */
+  .mobile-bottom-bar .nav-link {
+    font-size: 1.2rem;
+    padding: 0.6rem 0.25rem;
+  }
+
+  /* Container padding on mobile */
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  /* Pro-tip cards: full width */
+  .pro-tip-card {
+    margin: 1rem 0;
+  }
+
+  /* Section headings */
+  h2[style] {
+    font-size: 1.4rem !important;
+  }
+
+  /* Timeline: full width steps */
+  .timeline-step {
+    padding: 1rem !important;
+  }
+
+  /* Quiz buttons: stack vertically on mobile */
+  .quiz-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quiz-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
