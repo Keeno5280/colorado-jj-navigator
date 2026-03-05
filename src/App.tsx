@@ -7,6 +7,8 @@ import EducationPage from './pages/EducationPage';
 import RecordCleaningPage from './pages/RecordCleaningPage';
 import GlossaryPage from './pages/GlossaryPage';
 import ChargeTypesPage from './pages/ChargeTypesPage';
+import DispositionPage from './pages/DispositionPage';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route path="/cleaning" element={<RecordCleaningPage />} />
           <Route path="/glossary" element={<GlossaryPage />} />
           <Route path="/charges" element={<ChargeTypesPage />} />
+          <Route path="/disposition" element={<DispositionPage />} />
         </Routes>
       </Layout>
     </Router>

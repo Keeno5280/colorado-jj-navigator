@@ -14,6 +14,7 @@ const navItems = [
     { to: '/education', label: 'Educational Rights', icon: '🎓' },
     { to: '/cleaning', label: 'Record Cleaning', icon: '🧹' },
     { to: '/charges', label: 'Charge Types', icon: '⚠️' },
+    { to: '/disposition', label: 'Disposition Options', icon: '⚖️' },
     { to: '/glossary', label: 'Legal Glossary', icon: '📖' },
 ];
 

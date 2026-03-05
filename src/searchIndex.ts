@@ -83,6 +83,16 @@ const searchIndex: SearchResult[] = [
     { title: 'Preliminary Hearing (Timeline)', excerpt: 'Probable cause determination. Motions due within 14 days of advisement.', section: 'Case Timeline', sectionIcon: '⏱️', path: '/timeline' },
     { title: 'Adjudicatory Trial (Timeline)', excerpt: 'Judge decides guilty or not guilty. Must start within 60 days if youth is detained.', section: 'Case Timeline', sectionIcon: '⏱️', path: '/timeline' },
     { title: 'Disposition Hearing (Timeline)', excerpt: 'Sentencing equivalent. JPO submits report, attorney argues for least restrictive option. Usually within 45 days of adjudication.', section: 'Case Timeline', sectionIcon: '⏱️', path: '/timeline' },
+
+    // ── DISPOSITION OPTIONS ──────────────────────────────────────────
+    { title: 'Diversion / Informal Adjustment', excerpt: 'Case resolved before petition — youth completes requirements, charges not formally filed. No adjudication on record (C.R.S. 19-2.5-302).', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
+    { title: 'Deferred Adjudication', excerpt: 'Youth pleads guilty but judge delays the formal adjudication. Success = dismissal. Violation = proceeds to adjudication (C.R.S. 19-2.5-901).', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
+    { title: 'Probation (Disposition)', excerpt: 'Most common disposition — youth lives at home with JPO supervision. Conditions include check-ins, curfews, counseling, community service (C.R.S. 19-2.5-901).', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
+    { title: 'Intensive Supervision Probation (ISP)', excerpt: 'Stricter probation with JPO contact multiple times per week, electronic monitoring, and structured scheduling.', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
+    { title: 'Day Treatment Programs', excerpt: 'Structured daytime programming — alternative schooling + therapy. Youth returns home at night.', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
+    { title: 'Out-of-Home Placement', excerpt: 'Youth lives in group home, residential treatment, or therapeutic foster care. Less restrictive than DYS commitment (C.R.S. 19-2.5-901).', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
+    { title: 'Commitment to DYS', excerpt: 'Most restrictive — secure DYS facility. Up to 2 years standard; 3-7 years Aggravated Juvenile Offender (C.R.S. 19-2.5-1103).', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
+    { title: 'Least Restrictive Disposition Principle', excerpt: 'Judges must impose the least restrictive option consistent with public safety and youth needs (C.R.S. 19-2.5-901). Every case is different.', section: 'Disposition Options', sectionIcon: '⚖️', path: '/disposition' },
 ];
 
 export default searchIndex;
